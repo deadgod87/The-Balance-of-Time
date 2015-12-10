@@ -3,8 +3,11 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
+    //Player movement Speed
     public float moveSpeed = 3.0f;
+    //Player Max jump height
     public float jumpHeight = 3.0f;
+    //Player max jump speed
     public float jumpSpeed = 1f;
 
 	// Use this for initialization
@@ -19,19 +22,27 @@ public class PlayerControl : MonoBehaviour {
 	
 	}
 
+    //Handles the movement functions for the player
     void MovementControl()
     {
-        float h = Input.GetAxis("Horizontal");
-
-        if(h > 0)
+        //references the horizontal (left/right) input by the player 
+        float h = Input.GetAxisRaw("Horizontal");
+        //Checks if a direction is being inputted
+        if(h != 0)
         {
+            //moves the player in the right direction based on input
             transform.position += transform.right * moveSpeed * Time.deltaTime;
         }
 
-        if (h < 0)
+        //Vector that holds current player movement
+        Vector3 NextDir = new Vector3(0, 0, h);
+        //checks if player is moving
+        if (NextDir != Vector3.zero)
         {
-            transform.position -= transform.right * moveSpeed * Time.deltaTime;
+            //Rotates player to proper direction based on movement input
+            transform.rotation = Quaternion.LookRotation(NextDir);
         }
+
 
         if(Input.GetButtonDown("Jump"))
         {
