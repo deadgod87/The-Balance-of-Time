@@ -6,6 +6,7 @@ public class PlayerFollow : MonoBehaviour {
     public GameObject player;
 
     public float cameraZDist = 3f;
+    public float cameraYdist = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,6 @@ public class PlayerFollow : MonoBehaviour {
 
     void FollowPlayer()
     {
-        transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z -cameraZDist);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + cameraYdist, player.transform.position.z -cameraZDist);
     }
 }

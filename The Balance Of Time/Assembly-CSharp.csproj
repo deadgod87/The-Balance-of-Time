@@ -46,11 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\New Assets\GrassRoadRace\Script\CameraMove.cs" />
      <Compile Include="Assets\Respawn.cs" />
      <Compile Include="Assets\Scripts\CameraScripts\PlayerFollow.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerControl.cs" />
      <Compile Include="Assets\SmallTransitionZone.cs" />
      <None Include="Assets\Models\Baker House\Readme.txt" />
+     <None Include="Assets\New Assets\cartoon_well\well_description.txt" />
+     <None Include="Assets\New Assets\NatureStarterKit\info.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
